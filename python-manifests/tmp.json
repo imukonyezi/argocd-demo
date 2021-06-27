@@ -1,0 +1,57 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2021-06-26T10:22:44Z",
+        "deletionTimestamp": "2021-06-26T20:03:05Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "argocd"
+        },
+        "name": "argocd",
+        "resourceVersion": "56025",
+        "uid": "22cfd247-34ed-4349-9dfd-14140d3d17b7"
+    },
+    "spec": {
+        "finalizers": []
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-06-26T20:04:10Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2021-06-26T20:04:10Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2021-06-26T20:04:10Z",
+                "message": "Failed to delete all resource types, 1 remaining: unexpected items still remain in namespace: argocd for gvr: /v1, Resource=pods",
+                "reason": "ContentDeletionFailed",
+                "status": "True",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2021-06-26T20:04:10Z",
+                "message": "Some resources are remaining: pods. has 1 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2021-06-26T20:04:10Z",
+                "message": "All content-preserving finalizers finished",
+                "reason": "ContentHasNoFinalizers",
+                "status": "False",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
